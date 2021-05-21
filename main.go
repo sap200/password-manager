@@ -36,7 +36,7 @@ func main() {
 	g := generator.New(*lowercase, *uppercase, *digits, *specialChars, *tag, *length)
 	password := g.Generate()
 
-	f, err := os.OpenFile("data.txt", os.O_APPEND|os.O_CREATE, 0644)
+	f, err := os.OpenFile("data.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatalln(err)
 	}
